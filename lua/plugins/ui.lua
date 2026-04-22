@@ -14,7 +14,7 @@ return {
     'akinsho/bufferline.nvim',
     dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
-      require("bufferline").setup({ options = { separator_style = "slant" } })
+      require("bufferline").setup({ options = { separator_style = "thin" } })
       vim.keymap.set("n", "<S-l>", ":BufferLineCycleNext<CR>", { desc = "Next Tab" })
       vim.keymap.set("n", "<S-h>", ":BufferLineCyclePrev<CR>", { desc = "Prev Tab" })
       vim.keymap.set("n", "<A-w>", ":bdelete<CR>", { desc = "Close Buffer" })
