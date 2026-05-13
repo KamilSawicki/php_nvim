@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Syntax Preview</title>
+  <link rel="stylesheet" href="test.css" />
+  <script src="test.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav>
+      <a href="/" class="logo">MyApp</a>
+      <ul class="nav-links">
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Hello, <span class="highlight">World</span>!</h1>
+      <p>This is a <strong>syntax highlighting</strong> preview file.</p>
+      <button id="greet-btn" data-name="World" disabled>Greet</button>
+    </section>
+
+    <section class="cards">
+      <article class="card" aria-label="Feature card">
+        <h2>Feature One</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <footer>
+          <time datetime="2024-01-15">January 15, 2024</time>
+        </footer>
+      </article>
+    </section>
+
+    <form action="/submit" method="POST">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+      <label for="role">Role</label>
+      <select id="role" name="role">
+        <option value="">-- select --</option>
+        <option value="admin">Admin</option>
+        <option value="user" selected>User</option>
+      </select>
+
+      <button type="submit">Send</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 MyApp. All rights reserved.</p>
+  </footer>
+</body>
+</html>

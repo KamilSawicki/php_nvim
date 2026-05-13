@@ -1,0 +1,128 @@
+:root {
+  --color-primary:    #3b82f6;
+  --color-secondary:  #8b5cf6;
+  --color-bg:         #0f172a;
+  --color-surface:    #1e293b;
+  --color-text:       #e2e8f0;
+  --color-muted:      #94a3b8;
+  --radius:           0.5rem;
+  --shadow:           0 4px 6px -1px rgb(0 0 0 / 0.4);
+  --transition:       150ms ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ── Layout ─────────────────────────────────── */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgb(255 255 255 / 0.08);
+  padding: 1rem 2rem;
+}
+
+.site-header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 72rem;
+  margin-inline: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+/* ── Components ─────────────────────────────── */
+
+.hero {
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.highlight {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid rgb(255 255 255 / 0.06);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.5);
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+button:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--color-primary) 80%, white);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    padding: 3rem 1rem;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; translate: 0 1rem; }
+  to   { opacity: 1; translate: 0 0; }
+}
+
+.card {
+  animation: fade-in 0.3s ease both;
+}
