@@ -9,6 +9,7 @@ opt.tabstop = 4
 opt.expandtab = true
 opt.shell = "/usr/bin/fish"
 opt.updatetime = 1000
+opt.fillchars = { eob = " " }
 
 -- Global Transparency Fix
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
