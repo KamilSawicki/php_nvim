@@ -17,6 +17,7 @@ return {
 
       local function save_session()
         pcall(vim.cmd, "Neotree close")
+        pcall(function() require("config.activitybar").close() end)
         local p = project_path()
         if p then
           vim.cmd("mksession! " .. vim.fn.fnameescape(p))
