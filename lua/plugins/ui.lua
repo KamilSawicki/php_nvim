@@ -77,7 +77,7 @@ return {
         -- Buffers
         { "<S-l>",          desc = "Next Buffer" },
         { "<S-h>",          desc = "Prev Buffer" },
-        { "<leader>db",     desc = "Close Buffer" },
+        { "<leader>bc",     desc = "Close Buffer" },
         -- Terminal
         { "<A-t>",          desc = "Toggle Terminal" },
         -- Theme
@@ -98,7 +98,7 @@ return {
       require("bufferline").setup({ options = { separator_style = "thin" } })
       vim.keymap.set("n", "<S-l>", ":BufferLineCycleNext<CR>", { desc = "Next Buffer" })
       vim.keymap.set("n", "<S-h>", ":BufferLineCyclePrev<CR>", { desc = "Prev Buffer" })
-      vim.keymap.set("n", "<leader>db", function()
+      vim.keymap.set("n", "<leader>bc", function()
         require("mini.bufremove").delete()
       end, { desc = "Close Buffer" })
     end
