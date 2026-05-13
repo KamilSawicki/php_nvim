@@ -54,27 +54,12 @@ return {
         install_phpantom()
       end
 
-      local lspconfig = require('lspconfig')
-      local configs   = require('lspconfig.configs')
-
-      if not configs.phpantom then
-        configs.phpantom = {
-          default_config = {
-            cmd      = { p_bin, "--stdio" },
-            filetypes = { "php" },
-            root_dir = lspconfig.util.root_pattern(".phpantom.toml", "composer.json", ".git"),
-          },
-        }
-      end
-
-      lspconfig.phpantom.setup({
-        capabilities = require('cmp_nvim_lsp').default_capabilities(),
-        on_attach = function(_, bufnr)
-          local opts = { buffer = bufnr }
-          vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-          vim.keymap.set('n', 'K',  vim.lsp.buf.hover, opts)
-        end,
+      vim.lsp.config('phpantom', {
+        cmd          = { p_bin, "--stdio" },
+        filetypes    = { "php" },
+        root_markers = { ".phpantom.toml", "composer.json", ".git" },
       })
+      vim.lsp.enable('phpantom')
     end,
   },
   -- Completion Engine
