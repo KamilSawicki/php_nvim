@@ -112,7 +112,7 @@ return {
       "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
       { "s1n7ax/nvim-window-picker", version = "2.*", config = function()
-          require("window-picker").setup({ filter_rules = { bo = { filetype = { "neo-tree" } } } })
+          require("window-picker").setup({ filter_rules = { bo = { filetype = { "neo-tree", "activitybar" } } } })
         end
       },
     },
